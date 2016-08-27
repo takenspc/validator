@@ -6,10 +6,12 @@ addons:
 language: java
 jdk:
   - oraclejdk8
-python:
-  - 2.7.12
 install:
-  - true
+  # Install latest python 2.7.x
+  - curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+  - pyenv install 2.7.12
+  - pyenv shell 2.7.12
+  - python --version
 # notifications:
 #  webhooks:
 #    urls:
@@ -18,7 +20,6 @@ install:
 #    on_failure: always  # options: [always|never|change] default: always
 #    on_start: false     # default: false
 script:
-- python --version
 - python ./build/build.py dldeps
 - python ./build/build.py build
 - python ./build/build.py check
