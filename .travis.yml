@@ -7,8 +7,10 @@ language: java
 jdk:
   - oraclejdk8
 install:
-  # Install latest python 2.7.x
+  # Install latest Python 2.7.x as Python 2.7.9 introduced ssl related changes
+  # https://www.python.org/downloads/release/python-279/
   - curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+  - export PATH="~/.pyenv/bin:$PATH"
   - pyenv install 2.7.12
   - pyenv shell 2.7.12
   - python --version
