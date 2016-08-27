@@ -11,6 +11,8 @@ install:
   # https://www.python.org/downloads/release/python-279/
   - curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
   - export PATH="~/.pyenv/bin:$PATH"
+  - eval "$(pyenv init -)"
+  - eval "$(pyenv virtualenv-init -)"
   - pyenv install 2.7.12
   - pyenv global 2.7.12
   - python --version
