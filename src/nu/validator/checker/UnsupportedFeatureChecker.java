@@ -15,9 +15,7 @@ public class UnsupportedFeatureChecker extends Checker {
         if ("http://www.w3.org/1999/xhtml" != uri) {
             return;
         }
-        if ("dialog" == localName) {
-            warnAboutElement(localName);
-        } else if ("textarea" == localName) {
+        if ("textarea" == localName) {
             if (atts.getIndex("", "dirname") > -1) {
                 warnAboutAttributeOnElement("dirname", "textarea");
             }
@@ -36,12 +34,6 @@ public class UnsupportedFeatureChecker extends Checker {
 
     private void warnAboutAttribute(String name) throws SAXException {
         warn("The \u201C" + name + "\u201D attribute is not supported in"
-                + " all browsers. Please be sure to test, and consider"
-                + " using a polyfill.");
-    }
-
-    private void warnAboutElement(String name) throws SAXException {
-        warn("The \u201C" + name + "\u201D element is not supported in"
                 + " all browsers. Please be sure to test, and consider"
                 + " using a polyfill.");
     }
