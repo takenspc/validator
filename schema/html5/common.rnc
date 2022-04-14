@@ -203,6 +203,7 @@ common.attrs.present =
 common.attrs.other =
 	(	common.attrs.autofocus?
 	&	common.attrs.inputmode?
+	&	common.attrs.enterkeyhint?
 	&	common.attrs.nonce?
 	)
 
@@ -214,6 +215,17 @@ common.attrs.other =
 	common.attrs.inputmode =
 		attribute inputmode {
 			string
+		}
+
+	common.attrs.enterkeyhint =
+		attribute enterkeyhint {
+			w:string "enter" |
+			w:string "done" |
+			w:string "go" |
+			w:string "next" |
+			w:string "previous" |
+			w:string "search" |
+			w:string "send"
 		}
 
 	common.attrs.nonce =

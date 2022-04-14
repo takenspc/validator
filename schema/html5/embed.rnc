@@ -222,6 +222,7 @@ namespace local = ""
 			                    | draggable
 			                    | hidden
 			                    | inputmode
+			                    | enterkeyhint
 			                    | nonce
 			                    | onabort
 			                    | onauxclick
